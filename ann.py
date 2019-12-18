@@ -14,7 +14,7 @@ Y = dataset[:,8]
 model = Sequential()
 model.add(Dense(12, activation='relu', input_dim=8))
 model.add(Dense(1, activation='sigmoid'))
-model.compile(optimizer= 'adam', loss='squared_hinge', metrics=['accuracy'])
+model.compile(optimizer= 'adam', loss='binary_crossentropy', metrics=['accuracy'])
 history = model.fit(X, Y, epochs=100, batch_size= 10)
 loss, accuracy = model.evaluate(X, Y)
 print("\nLoss: %.2f, Accuracy: %.2f%%" % (loss, accuracy*100))
